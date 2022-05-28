@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "732825489585",
+    "project_id": "cuidpet-eae07",
+    "storage_bucket": "cuidpet-eae07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732825489585:android:0f0edcd9ffafcf7bd11290",
+        "android_client_info": {
+          "package_name": "com.cuidPet.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732825489585-vaas84uhats7l0qr71c2hkht5273ma18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdnhXYRbmAE1YHQgFkRzEiZNwDoQ5stpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732825489585-vaas84uhats7l0qr71c2hkht5273ma18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732825489585:android:aee289c052002b58d11290",
+        "android_client_info": {
+          "package_name": "com.example.flutter_cuidpet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732825489585-vaas84uhats7l0qr71c2hkht5273ma18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdnhXYRbmAE1YHQgFkRzEiZNwDoQ5stpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732825489585-vaas84uhats7l0qr71c2hkht5273ma18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
