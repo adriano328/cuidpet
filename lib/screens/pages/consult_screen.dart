@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cuidpet/models/consulta/consulta.dart';
 import 'package:flutter_cuidpet/models/consulta/Consulta_service.dart';
-import 'package:flutter_cuidpet/models/consulta/consulta.dart';
 
 void main() {
   runApp(consult_screen());
@@ -49,6 +48,8 @@ class _consult_screenState extends State<consult_screen> {
       TextEditingController();
   TextEditingController mucosaAnalController = TextEditingController();
 
+  TextEditingController _dataController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -86,42 +87,54 @@ class _consult_screenState extends State<consult_screen> {
                           ),
                           const Text('CPF Tutor: ',
                               style: TextStyle(fontSize: 12)),
-                          TextFormField(
-                            controller: cpfController,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher o CPF do tutor';
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text('Nome Paciente: ',
-                              style: TextStyle(fontSize: 12)),
-                          TextFormField(
-                            controller: nomePacienteController,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher o nome do paciente';
-                              }
-                              return null;
-                            },
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: cpfController,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher o CPF do tutor';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text('Nome Paciente: ',
+                                  style: TextStyle(fontSize: 12)),
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: nomePacienteController,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher o nome do paciente';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 8,
@@ -131,28 +144,26 @@ class _consult_screenState extends State<consult_screen> {
                           const SizedBox(
                             height: 8,
                           ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
                           const Text('Peso: ', style: TextStyle(fontSize: 12)),
-                          TextFormField(
-                            controller: pesoController,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher do paciente';
-                              }
-                              return null;
-                            },
+                          Padding(
+                            padding: const EdgeInsets.only(right: 380),
+                            child: TextFormField(
+                              style: const TextStyle(fontSize: 12),
+                              controller: pesoController,
+                              decoration: InputDecoration(
+                                  isDense: true,
+                                  contentPadding: const EdgeInsets.all(10),
+                                  border: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          width: 2, color: Colors.amber),
+                                      borderRadius: BorderRadius.circular(8))),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Por favor, preencher do paciente';
+                                }
+                                return null;
+                              },
+                            ),
                           ),
                           const SizedBox(
                             height: 8,
@@ -164,6 +175,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: anamneseGeral,
                             minLines: 6,
                             keyboardType: TextInputType.multiline,
@@ -201,6 +213,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaRespiratorioController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -229,6 +242,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaCardiovascularController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -257,6 +271,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaDigestorioController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -285,6 +300,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaUrinarioController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -313,6 +329,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaReprodutorController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -341,6 +358,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaLocomotorController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -369,6 +387,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: sistemaNeurologicoController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -397,6 +416,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: peleAnexosController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -425,6 +445,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: olhosController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -462,6 +483,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: posturaController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -490,6 +512,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: TextStyle(fontSize: 12),
                             controller: nivelConscienciaController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -518,6 +541,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: TextStyle(fontSize: 12),
                             controller: escoreCorporalController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -545,52 +569,64 @@ class _consult_screenState extends State<consult_screen> {
                               fontSize: 12,
                             ),
                           ),
-                          TextFormField(
-                            controller: TRController,
-                            minLines: 1,
-                            keyboardType: TextInputType.multiline,
-                            maxLines: null,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher as informações abaixo!';
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            'FR (ºmpm):',
-                            style: TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                          TextFormField(
-                            controller: FRController,
-                            minLines: 1,
-                            keyboardType: TextInputType.multiline,
-                            maxLines: null,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher as informações abaixo!';
-                              }
-                              return null;
-                            },
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  style: TextStyle(fontSize: 12),
+                                  controller: TRController,
+                                  minLines: 1,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher as informações abaixo!';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              const Text(
+                                'FR (ºmpm):',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: FRController,
+                                  minLines: 1,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher as informações abaixo!';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 8,
@@ -601,52 +637,64 @@ class _consult_screenState extends State<consult_screen> {
                               fontSize: 12,
                             ),
                           ),
-                          TextFormField(
-                            controller: TPCController,
-                            minLines: 1,
-                            keyboardType: TextInputType.multiline,
-                            maxLines: null,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher as informações abaixo!';
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            'Pulso (ppm):',
-                            style: TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                          TextFormField(
-                            controller: pulsoController,
-                            minLines: 1,
-                            keyboardType: TextInputType.multiline,
-                            maxLines: null,
-                            decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        width: 2, color: Colors.amber),
-                                    borderRadius: BorderRadius.circular(8))),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencher as informações abaixo!';
-                              }
-                              return null;
-                            },
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: TPCController,
+                                  minLines: 1,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher as informações abaixo!';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              const Text(
+                                'Pulso (ppm):',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: pulsoController,
+                                  minLines: 1,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  decoration: InputDecoration(
+                                      isDense: true,
+                                      contentPadding: const EdgeInsets.all(10),
+                                      border: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 2, color: Colors.amber),
+                                          borderRadius:
+                                              BorderRadius.circular(8))),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencher as informações abaixo!';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 8,
@@ -658,6 +706,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: hidratacaoController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -686,6 +735,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: linfonodosSubController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -714,6 +764,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: TextStyle(fontSize: 12),
                             controller: linfonodosPreescapularesController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -742,6 +793,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: linfonodosPopliteosController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -770,6 +822,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: linfonodosInguinaisController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -798,6 +851,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: mucosaOcularController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -826,6 +880,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: mucosaOralController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -854,6 +909,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: mucosaPenianaeVulvarController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -882,6 +938,7 @@ class _consult_screenState extends State<consult_screen> {
                             ),
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: mucosaAnalController,
                             minLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -909,7 +966,7 @@ class _consult_screenState extends State<consult_screen> {
                                   Consulta_service consulta_service =
                                       Consulta_service();
                                   Consulta consulta = Consulta(
-                                    cpfController.text,
+                                      cpfController.text,
                                       nomePacienteController.text,
                                       pesoController.text,
                                       anamneseGeral.text,
@@ -937,9 +994,8 @@ class _consult_screenState extends State<consult_screen> {
                                       mucosaOcularController.text,
                                       mucosaOralController.text,
                                       mucosaPenianaeVulvarController.text,
-                                      mucosaAnalController.text
-                                  );
-                                       consulta_service.addConsulta(consulta);
+                                      mucosaAnalController.text);
+                                  consulta_service.addConsulta(consulta);
                                 }
                                 const SizedBox(
                                   height: 30,

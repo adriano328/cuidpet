@@ -65,6 +65,7 @@ class _patinent_screenState extends State<patinent_screen> {
                                 style: TextStyle(fontSize: 10)),
                             Expanded(
                               child: TextFormField(
+                                style: const TextStyle(fontSize: 12),
                                 controller: cpfController,
                                 decoration: InputDecoration(
                                     isDense: true,
@@ -89,6 +90,7 @@ class _patinent_screenState extends State<patinent_screen> {
                                 style: TextStyle(fontSize: 10)),
                             Expanded(
                               child: TextFormField(
+                                style: const TextStyle(fontSize: 10),
                                 controller: nomeTutorController,
                                 decoration: InputDecoration(
                                     isDense: true,
@@ -117,6 +119,7 @@ class _patinent_screenState extends State<patinent_screen> {
                                 style: TextStyle(fontSize: 10)),
                             Expanded(
                               child: TextFormField(
+                                style: const TextStyle(fontSize: 12),
                                 controller: nomePacienteController,
                                 decoration: InputDecoration(
                                     isDense: true,
@@ -141,6 +144,7 @@ class _patinent_screenState extends State<patinent_screen> {
                                 style: TextStyle(fontSize: 10)),
                             Expanded(
                               child: TextFormField(
+                                style: const TextStyle(fontSize: 12),
                                 controller: idadeController,
                                 decoration: InputDecoration(
                                     isDense: true,
@@ -205,6 +209,7 @@ class _patinent_screenState extends State<patinent_screen> {
                         Padding(
                           padding: const EdgeInsets.only(right: 250),
                           child: TextFormField(
+                            style: const TextStyle(fontSize: 12),
                             controller: racaController,
                             decoration: InputDecoration(
                                 isDense: true,

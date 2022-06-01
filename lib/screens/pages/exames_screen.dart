@@ -76,46 +76,56 @@ class _exames_screenState extends State<exames_screen> {
                           const SizedBox(
                             height: 20,
                           ),
-                          const Text('CPF Tutor: ',
-                              style: TextStyle(fontSize: 12)),
-                          TextFormField(
-                            controller: cpfController,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              contentPadding: const EdgeInsets.all(10),
-                              border: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      width: 2, color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(8)),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencha o CPF do tutor';
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Text('Nome Paciente: ',
-                              style: TextStyle(fontSize: 12)),
-                          TextFormField(
-                            controller: nomePacienteController,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              contentPadding: const EdgeInsets.all(10),
-                              border: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      width: 2, color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(8)),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, preencha o Nome do tutor';
-                              }
-                              return null;
-                            },
+                          Row(
+                            children: [
+                              const Text('CPF Tutor: ',
+                                  style: TextStyle(fontSize: 10)),
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: cpfController,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    contentPadding: const EdgeInsets.all(10),
+                                    border: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            width: 2, color: Colors.amber),
+                                        borderRadius: BorderRadius.circular(8)),
+                                  ),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencha o CPF do tutor';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text('Nome Paciente: ',
+                                  style: TextStyle(fontSize: 10)),
+                              Expanded(
+                                child: TextFormField(
+                                  style: const TextStyle(fontSize: 12),
+                                  controller: nomePacienteController,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    contentPadding: const EdgeInsets.all(10),
+                                    border: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            width: 2, color: Colors.amber),
+                                        borderRadius: BorderRadius.circular(8)),
+                                  ),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Por favor, preencha o Nome do tutor';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 15,
@@ -335,6 +345,7 @@ class _exames_screenState extends State<exames_screen> {
                                 ),
                               ),
                               TextFormField(
+                                style: const TextStyle(fontSize: 12),
                                 controller: observacoesController,
                                 minLines: 6,
                                 keyboardType: TextInputType.multiline,
@@ -358,19 +369,23 @@ class _exames_screenState extends State<exames_screen> {
                                           Exames_service();
                                       Exames exames = Exames(
                                           cpf: cpfController.text,
-                                         nomePaciente:  nomePacienteController.text,
-                                         observacao:  observacoesController.text,
-                                         hemograma: hemograma,
-                                         contagemPlaquetas: contagemPlaquetas,
-                                         pesquisaHemoparasitas: pesquisaHemoparasitas,
-                                         culturaBacteriologica: culturaBacteriologica,
-                                         urinaI: urinaI,
-                                         citologia: citologia,
-                                         perfilRenal: perfilRenal,
-                                         perfilHepatico: perfilHepatico,
-                                         culturaOuvido: culturaOuvido,
-                                         pesquisaEctoparasitas: pesquisaEctoparasitas
-                                         );
+                                          nomePaciente:
+                                              nomePacienteController.text,
+                                          observacao:
+                                              observacoesController.text,
+                                          hemograma: hemograma,
+                                          contagemPlaquetas: contagemPlaquetas,
+                                          pesquisaHemoparasitas:
+                                              pesquisaHemoparasitas,
+                                          culturaBacteriologica:
+                                              culturaBacteriologica,
+                                          urinaI: urinaI,
+                                          citologia: citologia,
+                                          perfilRenal: perfilRenal,
+                                          perfilHepatico: perfilHepatico,
+                                          culturaOuvido: culturaOuvido,
+                                          pesquisaEctoparasitas:
+                                              pesquisaEctoparasitas);
                                       exames_service.addExames(exames);
                                     }
                                   },
