@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_cuidpet/models/units/patient.dart';
+import 'package:flutter_cuidpet/models/patient.dart';
 
 class Patient_service {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

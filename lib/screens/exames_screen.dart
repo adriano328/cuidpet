@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cuidpet/models/exames/exames.dart';
-import 'package:flutter_cuidpet/models/exames/exames_service.dart';
+import 'package:flutter_cuidpet/models/exames.dart';
+import 'package:flutter_cuidpet/service/exames_service.dart';
 
 void main() {
   runApp(exames_screen());

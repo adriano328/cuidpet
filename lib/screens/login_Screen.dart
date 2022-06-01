@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cuidpet/models/user/user_local.dart';
-import 'package:flutter_cuidpet/models/user/user_services.dart';
-import 'package:flutter_cuidpet/screens/pages/desktop_screen.dart';
+import 'package:flutter_cuidpet/models/user_local.dart';
+import 'package:flutter_cuidpet/service/user_services.dart';
+import 'package:flutter_cuidpet/screens/desktop_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);

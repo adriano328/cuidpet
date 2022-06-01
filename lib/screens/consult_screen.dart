@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cuidpet/models/consulta/consulta.dart';
-import 'package:flutter_cuidpet/models/consulta/Consulta_service.dart';
+import 'package:flutter_cuidpet/models/consulta.dart';
+import 'package:flutter_cuidpet/service/consulta_service.dart';
 
 void main() {
   runApp(consult_screen());

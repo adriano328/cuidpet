@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cuidpet/screens/pages/consult_screen.dart';
-import 'package:flutter_cuidpet/screens/pages/exames_screen.dart';
-import 'package:flutter_cuidpet/screens/pages/patient_screen.dart';
+import 'package:flutter_cuidpet/screens/consult_screen.dart';
+import 'package:flutter_cuidpet/screens/exames_screen.dart';
+import 'package:flutter_cuidpet/screens/patient_screen.dart';
 
 void main() {
   runApp(const desktop_screen());

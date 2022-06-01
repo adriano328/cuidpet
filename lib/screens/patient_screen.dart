@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cuidpet/models/units/patient.dart';
-import 'package:flutter_cuidpet/models/units/patient_service.dart';
+import 'package:flutter_cuidpet/models/patient.dart';
+import 'package:flutter_cuidpet/service/patient_service.dart';
 
 void main() {
   runApp(patinent_screen());
