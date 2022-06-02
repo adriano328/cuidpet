@@ -17,4 +17,8 @@ class Consulta_service {
   void deleteConsulta(String cpf) async {
     await _collectionReference.doc(cpf).delete();
   }
+
+  Stream<QuerySnapshot> getConsulta() {
+    return _collectionReference.snapshots();
+  }
 }

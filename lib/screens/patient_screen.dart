@@ -26,11 +26,7 @@ class _patinent_screenState extends State<patinent_screen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Cadastro Paciente'),
         ),
@@ -258,8 +254,6 @@ class _patinent_screenState extends State<patinent_screen> {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

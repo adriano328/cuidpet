@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cuidpet/screens/consult_screen.dart';
+import 'package:flutter_cuidpet/screens/exames_list_screen.dart';
 import 'package:flutter_cuidpet/screens/exames_screen.dart';
 import 'package:flutter_cuidpet/screens/patient_screen.dart';
 
@@ -94,7 +95,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       primary: Colors.blue[400], // background
                       onPrimary: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => exames_list_screen()));
+                    },
                     icon: const Icon(Icons.article),
                     label: const Text('Laboratório')),
                 const SizedBox(
@@ -105,7 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       primary: Colors.blue[400], // background
                       onPrimary: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      
+                    },
                     icon: const Icon(Icons.vaccines),
                     label: const Text('Vacinas')),
                 const SizedBox(
