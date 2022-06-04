@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cuidpet/screens/exames_screen.dart';
 import 'package:flutter_cuidpet/service/exames_service.dart';
 
 class exames_list_screen extends StatelessWidget {
@@ -63,6 +64,18 @@ class exames_list_screen extends StatelessWidget {
                                     },
                                     icon: const Icon(
                                       Icons.delete,
+                                      color: Colors.red,
+                                    )),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  exames_screen()));
+                                    },
+                                    icon: const Icon(
+                                      Icons.edit,
                                       color: Colors.red,
                                     ))
                               ]),

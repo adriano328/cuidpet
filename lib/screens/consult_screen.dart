@@ -1,6 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_cuidpet/models/consulta.dart';
 import 'package:flutter_cuidpet/service/consulta_service.dart';
+import 'package:flutter_cuidpet/service/patient_service.dart';
 
 void main() {
   runApp(consult_screen());
@@ -52,6 +55,8 @@ class _consult_screenState extends State<consult_screen> {
 
   @override
   Widget build(BuildContext context) {
+    Patient_service patient_service = Patient_service();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Prontuario Paciente'),

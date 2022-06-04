@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           TextFormField(
                             onSaved: (value) => userLocal.email = value,
-                            initialValue: userLocal.email,
+                            initialValue: 'lucas@gmail.com',
                             decoration: InputDecoration(
                                 hintText: 'E-mail: ',
                                 hintStyle: const TextStyle(fontSize: 10),
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           TextFormField(
                             onSaved: (value) => userLocal.password = value,
-                            initialValue: userLocal.password,
+                            initialValue: '123456',
                             decoration: InputDecoration(
                                 hintText: 'Senha: ',
                                 hintStyle: const TextStyle(fontSize: 10),

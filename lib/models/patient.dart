@@ -16,7 +16,7 @@ class Patient {
       required this.raca});
 
 //metodo para converter formato json em objetos
-Patient.fromMap(Map<String, dynamic> map)
+  Patient.fromMap(Map<String, dynamic> map)
       : cpf = map['cpf'],
         nome_tutor = map['nome_tutor'],
         nome_paciente = map['nome_paciente'],
@@ -24,8 +24,29 @@ Patient.fromMap(Map<String, dynamic> map)
         sexo = map['sexo'],
         raca = map['raca'];
 
+  Patient.fromJson(Map<String, Object?> json)
+      : this(
+          cpf: json['cpf']! as String,
+          nome_tutor: json['nome_tutor']! as String,
+          nome_paciente: json['nome_paciente']! as String,
+          idade: json['idade']! as String,
+          sexo: json['sexo']! as String,
+          raca: json['raca']! as String,
+        );
+
 // permite enviar informações ao firebase
   Map<String, dynamic> toMap() {
+    return {
+      'cpf': cpf,
+      'nome_tutor': nome_tutor,
+      'nome_paciente': nome_paciente,
+      'idade': idade,
+      'sexo': sexo,
+      'raca': raca
+    };
+  }
+
+  Map<String, Object?> toJson() {
     return {
       'cpf': cpf,
       'nome_tutor': nome_tutor,
