@@ -11,7 +11,10 @@ class Patient_service {
     _firestore.collection('patient').add(patient.toMap());
   }
 
-  
-
+  Stream<QuerySnapshot> buscaPorCPF() {
+    return _firestore
+        .collection('Patient')
+        .where('cpf', isEqualTo: 'cpf')
+        .snapshots();
   }
-
+}
