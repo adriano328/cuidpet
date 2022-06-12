@@ -106,16 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   width: 20,
                 ),
-                ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue[400], // background
-                      onPrimary: Colors.white,
-                    ),
-                    onPressed: () {
-                      
-                    },
-                    icon: const Icon(Icons.vaccines),
-                    label: const Text('Vacinas')),
                 const SizedBox(
                   width: 20,
                 ),
